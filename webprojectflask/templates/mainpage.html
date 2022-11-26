@@ -1,0 +1,1004 @@
+<!DOCTYPE html>  
+ <html lang="en">  
+ <head>  
+   <meta charset="UTF-8">  
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+   <title>Giftzone</title> 
+   <style>
+    *{  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+  }  
+  header{  
+  display: flex;  
+  justify-content: space-evenly;  
+  align-items: center;  
+  height:60px;  
+  width:100%;  
+  background:black;  
+  }  
+  .heading ul{  
+    display:flex;  
+    }  
+  .logo a{  
+    color:white;  
+    transition-duration: 1s;  
+    font-weight: 800;  
+  }  
+  .logo a:hover{  
+    color:rgb(240, 197, 6);  
+    transition-duration: 1s;  
+  }  
+  .heading ul li{  
+    list-style: none;  
+  }  
+  .heading ul li a{  
+    margin:5px;  
+    text-decoration: none;  
+    color:black;  
+    font-weight: 500;  
+    position:relative;  
+    color:white;  
+    margin:2px 14px;  
+    font-size: 18px;  
+    transition-duration: 1s;  
+  }  
+  .heading ul li a:active{  
+    color:red;  
+  }  
+  .heading ul li a:hover{  
+    color:rgb(243, 168, 7);  
+    transition-duration: 1s;  
+  }  
+  .heading ul li a::before{  
+    content:'';  
+    height:2px;  
+    width:0px;  
+    position:absolute;  
+    left:0;  
+    bottom:0;  
+    background-color: white;  
+    transition-duration: 1s;  
+  }  
+  .heading ul li a:hover::before{  
+    width:100%;   
+    transition-duration: 1s;  
+    background-color:rgb(243, 168, 7);  
+  }  
+  #input{  
+    height:30px;  
+    width:300px;  
+    text-decoration: none;  
+    border:0px;  
+    padding:5px;  
+  }  
+  .logo a{  
+    color: white;  
+    font-size: 35px;  
+    font-weight: 500;  
+    text-decoration:none;  
+  }  
+  ion-icon{  
+    width:30px;  
+    height:30px;  
+    background-color: white;  
+    color:black;  
+  }  
+  ion-icon:hover{  
+    cursor: pointer;  
+  }  
+  .search a{  
+    display:flex;  
+  }  
+  header a ion-icon{  
+    position:relative;  
+    right:3px;  
+  }  
+  .img-slider img{  
+    height:720px;  
+    width:1080px;  
+  }  
+  @keyframes slide{  
+    0%{  
+      left:0px;  
+    }  
+    15%{  
+      left:0px;  
+   }  
+    20%{  
+      left:-1080px;  
+    }  
+    32%{  
+      left:-1080px;  
+    }  
+    35%{  
+      left:-2160px;  
+    }  
+    47%{  
+      left:-2160px;  
+    }  
+    50%{  
+      left:-3240px;  
+    }  
+    63%{  
+      left:-3240px;  
+    }  
+    66%{  
+      left:-4320px;  
+    }  
+    79%{  
+      left:-4320px;  
+    }  
+    82%{  
+      left:-5400px;  
+    }  
+    100%{  
+      left:0px;  
+  }}  
+  .img-slider{  
+    display:flex;  
+    float:left;  
+    position:relative;  
+    width:1080px;  
+    height:720px;  
+    animation-name:slide;  
+    animation-duration: 10s;  
+        animation-iteration-count: infinite;  
+    transition-duration:2s ;  
+  }  
+  .heading1 {  
+    opacity:0;  
+  }  
+  .search{  
+    display:flex;  
+    position: relative;  
+  }  
+  .section1{  
+    width:1080px;  
+    overflow:hidden;  
+    justify-content: center;  
+    align-items: center;  
+    margin:0px auto;  
+  }  
+    .section2 .container{  
+      display:flex;  
+      width:100%;  
+      height:max-content;  
+      flex-wrap: wrap;  
+      justify-content:center;  
+      margin:10px auto;  
+    }  
+    .section2 .container .items{  
+      margin: 10px;  
+      width:200px;  
+      height: 300px;  
+      background-color:white;  
+      border:2.5px solid black;  
+      border-radius: 12px;  
+    }  
+    .section2 .container .items .name{  
+  text-align:center;  
+  background-color:rgb(240, 127, 6);  
+  height:25px;  
+  padding-top:4px;  
+  color:white;  
+  margin: 0;  
+    }  
+    .section2 .container .items .price{  
+  float:left;  
+  padding-left:10px;  
+  display: block;  
+  width:100%;  
+  color:rgb(255, 0, 0);  
+  font-weight: 650;  
+    }  
+    .section2 .container .items .info{  
+      padding-left:10px;  
+      color:rgb(243, 168, 7);  
+    }  
+    .section2 .container .items .img img{  
+  width:200px;  
+  height:200px;  
+  margin: 0;  
+  padding: 0;  
+  border-radius:12px;  
+  transition-duration:0.8s;  
+    }  
+    .section2 .container .items .img {  
+      overflow: hidden;  
+      margin: 0;  
+    }  
+    .section2 .container .items:hover .img img{  
+      transform: scale(1.2);  
+      transition-duration:0.8s;  
+      border-radius:12px;  
+    }  
+  footer{  
+    display:flex;  
+    flex-direction: column;  
+   background-color: black;  
+    align-items: center;  
+    color:white;  
+  }  
+  .footer1{  
+    display:flex;  
+  flex-direction: column;  
+  align-items: center;  
+  color:white;  
+  margin-top:15px;  
+  }  
+  .social-media{  
+    display:flex;  
+    justify-content: center;  
+    color:white;  
+    flex-wrap: wrap;  
+  }  
+  .social-media a{  
+    color:white;  
+    margin:20px;  
+    border-radius: 5px;  
+    margin-top:10px;  
+    color:white;  
+  }  
+  .social-media a ion-icon{  
+    color:white;  
+    background-color: black;  
+  }  
+  .social-media a:hover ion-icon{  
+    color:red;  
+    transform: translateY(5px);  
+  }  
+  .footer2{  
+    display: flex;  
+    width:100%;  
+    justify-content:space-evenly;  
+    align-items: center;  
+    text-decoration: none;  
+    flex-wrap: wrap;  
+  }  
+  .footer0{  
+    font-weight:1200;  
+    transition-duration: 1s;  
+  }  
+  .footer0:hover{  
+    color:rgb(243, 168, 7);  
+  }  
+  .footer2 .heading {  
+    font-weight: 900;  
+    font-size: 18px;  
+  }  
+  .footer3 {  
+    margin-top:60px;  
+    margin-bottom: 20px;  
+    display:flex;  
+    flex-wrap: wrap;  
+    justify-content: center;  
+  }  
+  .footer2 .heading:hover{  
+    color:rgb(243, 168, 7) ;  
+  }  
+  .footer2 .div:hover{  
+  transform: scale(1.05);  
+  }  
+  .footer3 h4{  
+    margin:0 10px;  
+  }  
+  .footer2 div{  
+    margin:10px;  
+  }  
+  .menu{  
+    visibility:hidden;  
+  }  
+  .heading1 .ham:active{  
+    color: red;  
+  }  
+  .items{  
+    overflow:hidden;  
+  }  
+  .ham,.close{  
+  cursor:pointer;  
+  }  
+  @media screen and (max-width:1250px){  
+    .heading ul li{  
+    display:none;  
+    }  
+    .items{  
+      transform:scale(0.9);  
+    }  
+    .img-slider img{  
+      height:60vw;  
+      width:80vw;  
+      }  
+    .ham:active {  
+       color:red;  
+     }   
+      .menu {  
+      display:flex;  
+      flex-direction: column;  
+      align-items: center;  
+      }    
+      .menu a ion-icon{  
+       position: absolute;  
+     }  
+     @keyframes slide1{  
+      0%{  
+        left:0vw;  
+      }  
+      15%{  
+        left:0vw;  
+      }  
+      20%{  
+        left:-80vw;  
+      }  
+      32%{  
+        left:-80vw;  
+      }  
+      35%{  
+        left:-160vw;  
+      }  
+      47%{  
+        left:-160vw;  
+      }  
+      50%{  
+        left:-240vw;  
+      }  
+      63%{  
+        left:-240vw;  
+      }  
+      66%{  
+        left:-320vw;  
+      }  
+      79%{  
+        left:-320vw;  
+      }  
+      82%{  
+        left:-400vw;  
+      }  
+      100%{  
+        left:0vw;  
+    }}  
+    .menu ul{  
+      display:flex;  
+      flex-direction:column;  
+      position: absolute;  
+      width:100vw;  
+      height:100vh;  
+      background-color: black;  
+      left:0;  
+      top:0;  
+      z-index:11;  
+      align-items: center;  
+      justify-content: center;  
+      opacity:1;  
+      }  
+  .close{  
+  z-index:34;      
+    color:white;  
+  background-color: black;  
+  }  
+  .close:active{  
+    color:red;  
+  }  
+   .menu ul li{  
+      list-style: none;  
+      margin: 20px;  
+      border-top:3px solid white;  
+      width:80%;  
+      text-align:center;  
+      padding-top:10px;  
+     }  
+     .menu ul li a{  
+  text-decoration: none;  
+  padding-top: 10px;  
+  color:white;  
+  font-weight: 900;  
+     }  
+     .menu ul li a:hover{  
+       color:rgb(240, 197, 6);  
+     }  
+    .img-slider{  
+      display:flex;  
+      float:left;  
+      position:relative;  
+      width:80%;  
+      height:60%;  
+      animation-name:slide1;  
+      animation-duration: 10s;  
+      animation-iteration-count: infinite;  
+      transition-duration:2s ;  
+    }  
+    .section1{  
+      width:80%;  
+      overflow:hidden;  
+      justify-content: center;  
+      align-items: center;  
+      margin:0px auto;  
+    }  
+  .heading1{  
+  opacity: 1;  
+  position:relative;  
+  bottom:8px;  
+    }  
+    .search a{  
+      display:flex;  
+      flex-wrap: nowrap;
+    }  
+  .heading1 .ham{  
+      background-color: black;  
+      color:white;  
+    }  
+    #input{  
+      width:200px;  
+      flex-shrink:2;  
+    }  
+    header{  
+      height:150px;  
+    }  
+  }  
+  @media screen and (max-width:550px){  
+    .heading ul li{  
+      display:none;  
+     }  
+     .heading1{  
+      opacity: 1;  
+      bottom:8px;  
+      }  
+      header{  
+            height:250px;  
+      flex-wrap: wrap;  
+      display: flex;  
+      flex-direction: column;  
+          }  
+    #input{  
+      width:150px;  
+    }  
+    .close{  
+  z-index:34;}  
+  .search a{  
+    display:flex;  
+    flex-wrap: nowrap;  
+  }  
+  }  
+   </style> 
+   <link rel="stylesheet" href="./ecommerce.css">  
+   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">  
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <script>(function(w, d) { w.CollectId = "63627cc2869a903d0b7e3573"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+  </head>
+  
+  <body>
+    
+ 
+ <body>  
+
+
+    
+   <header>  
+    
+     <div class="logo"><a href="#">GiftZone</a></div>  
+     <div class="menu">  
+       <a href=""><ion-icon name="close" class="close"></ion-icon></a>  
+       <ul>  
+         <li><a href="#" class="btn btn-primary my-2" type="button">HOME</a></li>  
+         <li><a href="#" class="under">SHOP BY CATEGORIES</a></li>  
+         <li><a href="#" class="under">OUR PRODUCTS</a></li>  
+         <li><a href="#" class="under">CONTACT US</a></li>  
+         <li><a href="#" class="under">ABOUT US</a></li>  
+       </ul>  
+     </div>  
+     
+
+
+
+
+     <div class="search">  
+       <a href=""><input type="text" placeholder="search products" id="input">  
+         <ion-icon class="s" name="search"></ion-icon>  
+       </a>  
+     </div>  
+     <div class="heading">  
+       <ul>  
+         <li><a href="min" class="under">HOME</a></li>  
+         <li><a href="#" class="under">SHOP BY CATEGORIES</a></li>  
+         <li><a href="#" class="under">OUR PRODUCTS</a></li>  
+         <li><a href="contact" class="under">CONTACT US</a></li>  
+         <li><a href="#" class="under">ABOUT US</a></li>  
+       </ul>  
+     </div>  
+     <div class="heading1">  
+       <ion-icon name="menu" class="ham"></ion-icon>  
+     </div>  
+   </header>
+   <section>  
+     <div class="section">  
+       <div class="section1">  
+         <div class="img-slider">  
+           <img src="https://crowningdetails.com/wp-content/uploads/2020/07/ice-cream-gift-basket-1024x683.jpg"  
+             alt="" class="img">  
+           <img src="https://images.pexels.com/photos/6347888/pexels-photo-6347888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  
+             alt="" class="img">  
+           <img src="https://www.funtasticonline.com/uploads/8/2/1/5/82155018/funtastic-bath-souvenir-gift-shop-items5_orig.jpg"  
+             alt="" class="img">  
+           <img src="https://cdn.shopify.com/s/files/1/0012/2198/4348/articles/IMG_5184_2048x.jpg?v=1536683084"  
+             alt="" class="img">  
+           <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"  
+             alt="" class="img">  
+         </div>  
+       </div>  
+       <div class="section2">  
+         <div class="container">  
+           <div class="items">  
+             <div class="img img1"><a href="shoes">  <img  
+                 src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"  
+                 alt=""></a></div>  
+             <div class="name">  SHOES </div>  
+             <div class="price">$20</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img2"><a href="tshirt">  <img  
+                 src="https://images.pexels.com/photos/3649765/pexels-photo-3649765.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  
+                 alt=""></a></div>  
+             <div class="name">MEN's T-SHIRT</div>  
+             <div class="price">$6.34</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img3"><a href="per"><img  
+                 src="https://th.bing.com/th/id/OIP.YOmgKyqAaWjBBfPJRCzctAHaHa?pid=ImgDet&rs=1"  
+                 alt=""></a></div>  
+             <div class="name">PERFUME</div>  
+             <div class="price">$9</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><a href="headphone">  <img  
+                 src="https://th.bing.com/th/id/OIP.K6U23nAHxT0zEaYfcgdsYAHaHa?pid=ImgDet&w=1000&h=1000&rs=1"  
+                 alt=""></a></div>  
+             <div class="name">HEADPHONES</div>  
+             <div class="price">$9.1</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://images.pexels.com/photos/6858618/pexels-photo-6858618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"  
+                 alt=""></div>  
+             <div class="name">SMART PHONE</div>  
+             <div class="price">$20</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://www.augrav.com/wp-content/uploads/2015/12/enameled-silver-peacock-kumkum-box.jpg"  
+                 alt=""></div>  
+             <div class="name">SILVER BOWL</div>  
+             <div class="price">$18</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://images.pexels.com/photos/4295985/pexels-photo-4295985.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  
+                 alt=""></div>  
+             <div class="name">HOODIES</div>  
+             <div class="price">$6.7</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://media.istockphoto.com/photos/vintage-plates-with-silver-teaspoons-picture-id184363070"  
+                 alt=""></div>  
+             <div class="name">DINNER SET</div>  
+             <div class="price">$10</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://th.bing.com/th/id/OIP.03Dbmge3l_sLcxx4dOGfDQAAAA?pid=ImgDet&rs=1"  
+                 alt=""></div>  
+             <div class="name">SHOWPIECE</div>  
+             <div class="price">$9.9</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://th.bing.com/th/id/OIP.qhbpGPJ_mDkZE2PL1y68SwHaHa?pid=ImgDet&rs=1"  
+                 alt=""></div>  
+             <div class="name">LEATHER BELT</div>  
+             <div class="price">$99</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://media.istockphoto.com/photos/modern-kitchen-microwave-oven-picture-id1144960519"  
+                 alt=""></div>  
+             <div class="name">MICROWAVE</div>  
+             <div class="price">$30</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://media.istockphoto.com/photos/black-coffee-maker-with-green-led-lights-picture-id177395430"  
+                 alt=""></div>  
+             <div class="name">COFFEE MAKER</div>  
+             <div class="price">$29.7</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://cdn.shopify.com/s/files/1/0006/7118/7062/products/Luxury-New-Fashion-Mens-Leather-Wallet-Purse-ID-Card-Holder-Billfold-Zipper-Wallets-Men-Business-Short_1024x1024.jpg?v=1555478947"  
+                 alt=""></div>  
+             <div class="name">LUXUARY WALLET</div>  
+             <div class="price">$100</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://th.bing.com/th/id/OIP.g6Ygbrr4-Pq3yT2UAGVAeAHaHa?pid=ImgDet&rs=1"  
+                 alt=""></div>  
+             <div class="name">MENS WATCH 2021</div>  
+             <div class="price">$78</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://images.pexels.com/photos/5834/nature-grass-leaf-green.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"  
+                 alt=""></div>  
+             <div class="name">BOOK</div>  
+             <div class="price">$9</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://i5.walmartimages.com/asr/c9b8bddd-9713-463f-815f-b820eb663cb7_1.058430944a2a4459a4d40cac7889936b.jpeg"  
+                 alt=""></div>  
+             <div class="name">BAG</div>  
+             <div class="price">$36.5</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://media.istockphoto.com/photos/hand-of-a-lady-selecting-yellow-colored-saree-in-a-shop-picture-id1301740530"  
+                 alt=""></div>  
+             <div class="name">SAREES</div>  
+             <div class="price">$25.6</div>  
+             <div class="info"></div>  
+           </div>  
+           <div class="items">  
+             <div class="img img1"><img  
+                 src="https://cdn.shopify.com/s/files/1/0298/0353/products/Brown_Leather_Women_Handbag_Work_Bag_Shoulder_Bag_For_Women_2_2048x2048.jpg?v=1571318118"  
+                 alt=""></div>  
+             <div class="name">WOMEN HANDBAG</div>  
+             <div class="price">$56</div>  
+             <div class="info"></div>  
+           </div>  
+         </div>  
+       </div>  
+     </div>  
+   </section> 
+
+
+   <!-- Popular Products -->
+  <section class="section">
+    <style>
+      .h {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 600;
+}
+
+.h h1 {
+  font-weight: 400;
+}
+
+.h span {
+  color:  #ff4321;
+}
+
+.ac-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 80px;
+  margin-bottom: 80px;
+}
+
+.ac {
+  text-align: center;
+  padding-bottom: 16px;
+  transition: all 500ms ease-in-out;
+}
+
+.ac:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ac .img-cover {
+  overflow: hidden;
+}
+
+.ac img {
+  transition: all 500ms ease-in-out;
+}
+
+.ac:hover img {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 567px) {
+  .h {
+    font-size: 32px;
+  }
+}
+
+.ab {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 4vw);
+  gap: 2rem;
+}
+
+.ab .item {
+  overflow: hidden;
+}
+
+.ab img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 500ms ease-out;
+}
+
+.ab .item-1 img {
+  object-fit: fill;
+}
+
+.ab img:hover {
+  transform: scale(1.2);
+}
+
+.item-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 9;
+}
+
+.item-2 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 9;
+}
+.item-3 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.item-4 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+
+@media only screen and (max-width: 600px) {
+  .gallary {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(20, 4vw);
+  }
+
+  .item-1 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 7;
+  }
+
+  .item-2 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 7;
+    grid-row-end: 11;
+  }
+  .item-3 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 11;
+    grid-row-end: 15;
+  }
+  .item-4 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 15;
+    grid-row-end: 19;
+  }
+}
+    </style>
+    <div class="h">
+      <h1>Popular <span>Products</span></h1>
+    </div>
+    <div class="ac-center box">
+      <div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.hQB_Q1YfopFjwsWWYreVYQHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Luxuary Leather hand bag-black</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div><a href="important"  class="price">LKR 8500 </a>  </div>
+      </div>
+
+      <!--<div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.iC68gNkwvoE1cPXwcjCz-QHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Covered leather sandal</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 5000</div>
+      </div>-->
+
+      <div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.7eni79cC63ye8jDRFin7KQHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Cute Wallet</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 1200</div>
+      </div>
+      <div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.4kwxAa2J3kVvoz1kFH-rDQHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Ladies wallet-purple</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 2000</div>
+      </div>
+      <!--<div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.bNVqgIVkY_UHSqmE5dVCLAHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Black Sandals men</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 3200</div>
+      </div>-->
+      <!--<div class="ac">
+        <div class="img-cover">
+          <img src="" alt="" />
+        </div>
+        <p>Ladies perfume</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 1600</div>
+      </div>-->
+      <div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.YOmgKyqAaWjBBfPJRCzctAHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Mens perfume</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 5600</div>
+      </div>
+      <div class="ac">
+        <div class="img-cover">
+          <img src="https://th.bing.com/th/id/OIP.fXUpjWg2y2851PVeEogOJwHaHa?pid=ImgDet&rs=1" alt="" />
+        </div>
+        <p>Mens watch</p>
+        <div class="rating">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+        <div class="price">LKR 1500</div>
+      </div>
+    </div>
+  </section>
+
+   
+   
+
+
+   <footer>  
+     <div class="footer0">  
+       <h1>GiftZone</h1>  
+     </div>  
+     <div class="footer1 ">  
+       Connect with us at<div class="social-media">  
+         <a href="#">  
+           <ion-icon name="logo-facebook"></ion-icon>  
+         </a>  
+         <a href="#">  
+           <ion-icon name="logo-linkedin"></ion-icon>  
+         </a>  
+         <a href="#">  
+           <ion-icon name="logo-youtube"></ion-icon>  
+         </a>  
+         <a href="#">  
+           <ion-icon name="logo-instagram"></ion-icon>  
+         </a>  
+         <a href="#">  
+           <ion-icon name="logo-twitter"></ion-icon>  
+         </a>  
+       </div>  
+     </div>  
+     <div class="footer2">  
+       <div class="product">  
+         <div class="heading">Products</div>  
+         <div class="div">Sell your Products</div>  
+         <div class="div">Advertise</div>  
+         <div class="div">Pricing</div>  
+         <div class="div">Product Buisness</div>  
+       </div>  
+       <div class="services">  
+         <div class="heading">Services</div>  
+         <div class="div">Return</div>  
+         <div class="div">Cash Back</div>  
+         <div class="div">Affiliate Marketing</div>  
+         <div class="div">Others</div>  
+       </div>  
+       <div class="Company">  
+         <div class="heading">Company</div>  
+         <div class="div">Complaint</div>  
+         <div class="div">Careers</div>  
+         <div class="div">Affiliate Marketing</div>  
+         <div class="div">Support</div>  
+       </div>  
+       <div class="Get Help">  
+         <div class="heading">Get Help</div>  
+         <div class="div">Help Center</div>  
+         <div class="div">Privacy Policy</div>  
+         <div class="div">Terms</div>  
+         <div class="div">Login</div>  
+       </div>  
+     </div>  
+     <div class="footer3">Copyright © <h4>GiftZone</h4> 2021-2028</div>  
+   </footer>  
+   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>  
+   <script src="./ecommerce.js"></script>  
+ </body>
+ </html>
